@@ -6,14 +6,14 @@ using System.Runtime.Serialization.Json;
 
 namespace FeatureOps
 {
-    public class FeatureOps
+    public class Client
     {
         private const string FEATURE_OPS_API_URL = "https://app.featureops.com/api/";
         private readonly string _authKey;
         private readonly Options _options;
         private readonly IEnumerable<FeatureFlag> _cache;
        
-        public FeatureOps(string authKey, Options options)
+        public Client(string authKey, Options options)
         {
             _authKey = authKey;
             _options = options;
