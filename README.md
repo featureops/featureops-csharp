@@ -4,6 +4,7 @@ Official C# Library for the Feature Ops Web API
 ## Features
 - Provide (and evaluate) feature flags settings
 - Capture and store feature flag statistics within the Feature Ops application
+- Continue to serve feature flags if connectivty to Feature Ops goes down
 - Improve performance via feature flag caching
 
 ## Support
