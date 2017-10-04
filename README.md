@@ -30,7 +30,7 @@ Package Manager Install
 ## Quick Start
 
 ```csharp
-var client = new FeatureOps.Client("{ENVIRONMENT AUTH KEY}", new Options { PollingInterval = 5 });
+var client = new FeatureOps.Client("{ENVIRONMENT AUTH KEY}", new FeatureOps.Options { PollingInterval = 5 });
 var response = await client.InitAsync();
 
 if (response.Success)

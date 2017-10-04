@@ -39,7 +39,7 @@ namespace FeatureOps
 
             if(flagResponse.Success)
             {
-                _cache = flagResponse.Value;
+                _cache = flagResponse.Value ?? new List<FeatureFlag>();
                 response.Success = true;
 
                 Task.Run(async () =>
@@ -109,30 +109,33 @@ namespace FeatureOps
         private async void RefreshCacheAsync()
         {
             var flagResponse = await _apiRequest.GetFlags(_authKey);
-            for (var i = 0; i < flagResponse.Value.Count; i++)
+            if (flagResponse.Success && flagResponse.Value != null)
             {
-                var isInCache = false;
-                for (var i2 = 0; i2 < _cache.Count; i2++)
+                for (var i = 0; i < flagResponse.Value.Count; i++)
                 {
-                    if (flagResponse.Value[i].CodeToken == _cache[i2].CodeToken)
+                    var isInCache = false;
+                    for (var i2 = 0; i2 < _cache.Count; i2++)
                     {
-                        isInCache = true;
+                        if (flagResponse.Value[i].CodeToken == _cache[i2].CodeToken)
+                        {
+                            isInCache = true;
 
-                        if (_cache[i2].IsCanary && flagResponse.Value[i].IsCanary)
-                        {
-                            // do nothing, persist original canary request for duration of user session
+                            if (_cache[i2].IsCanary && flagResponse.Value[i].IsCanary)
+                            {
+                                // do nothing, persist original canary request for duration of user session
+                            }
+                            else
+                            {
+                                _cache[i2] = flagResponse.Value[i];
+                            }
+                            break;
                         }
-                        else
-                        {
-                            _cache[i2] = flagResponse.Value[i];
-                        }
-                        break;
                     }
-                }
 
-                if (!isInCache)
-                {
-                    _cache.Add(flagResponse.Value[i]);
+                    if (!isInCache)
+                    {
+                        _cache.Add(flagResponse.Value[i]);
+                    }
                 }
             }
         }
