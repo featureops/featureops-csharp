@@ -31,11 +31,11 @@ if (response.Success)
 {
     if (await client.EvalFlagAsync("{CODE TOKEN}"))
     {
-        // Feature Is On
+        /* Feature Is On */
     }
     else
     {
-        // Feature Is Off
+        /* Feature Is Off */
     }
 }
 ```
@@ -75,7 +75,7 @@ var response = await client.InitAsync();
 
 if (response.Success)
 {
-    // Ready to go!
+    /* Ready to go! */
 }
 else {
     /* Take Error/Fallback Action */
@@ -96,11 +96,11 @@ Returns a `bool` after the call is complete.  This method call should be made wh
 ```cs
 if (await client.EvalFlagAsync("{CODE TOKEN}"))
 {
-    // Feature Is On
+    /* Feature Is On */
 }
 else
 {
-    // Feature Is Off
+    /* Feature Is Off */
 }
 ```
 
