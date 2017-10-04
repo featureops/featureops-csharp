@@ -23,7 +23,7 @@ Nuget Coming Soon!
 
 ## Quick Start
 
-```cs
+```csharp
 var client = new FeatureOps.Client("{ENVIRONMENT AUTH KEY}", new Options { PollingInterval = 5 });
 var response = await client.InitAsync();
 
@@ -69,7 +69,7 @@ Object returned with call to `Client.InitAsync()`.
 
 Returns a `InitResponse` after the call is complete.  This method call should be made on application load as it will fetch and locally cache feature flag settings for the environment that you are targeting.  Upon success, you are free to make calls to `EvalFlagAsync`, as needed, to evaluate whether a feature is 'on' or 'off'.
 
-```cs
+```csharp
 var client = new FeatureOps.Client("{ENVIRONMENT AUTH KEY}", new Options { PollingInterval = 5 });
 var response = await client.InitAsync();
 
@@ -93,7 +93,7 @@ Returns a `bool` after the call is complete.  This method call should be made wh
 
 `targets`:  A list of `IEnumerable<string>`, which pertain to the end user, that will be used to evaluate whether or not a feature flag should be 'on' or 'off'.  These will only impact the feature flag evaluation if the feature flag setting, for the environment that you are targeting, is set to 'Targets On' otherwise the `targets` will simply be ignored.
 
-```cs
+```csharp
 if (await client.EvalFlagAsync("{CODE TOKEN}"))
 {
     /* Feature Is On */
