@@ -19,6 +19,7 @@ The Feature Ops C# SDK supports the following framework versions:
 
 ## Install
 
+Nuget Coming Soon!
 
 ## Quick Start
 
