@@ -19,6 +19,8 @@ The Feature Ops C# SDK supports the following framework versions:
 
 ## Install
 
+Available on [NuGet](https://www.nuget.org/packages/featureops)!
+
 Package Manager Install   
 `PM>Install-Package FeatureOps`
 
