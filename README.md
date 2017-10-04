@@ -29,16 +29,13 @@ var response = await client.InitAsync();
 
 if (response.Success)
 {
-    while (true)
+    if (await client.EvalFlagAsync("{CODE TOKEN}"))
     {
-        if (await client.EvalFlagAsync("{CODE TOKEN}"))
-        {
-            // Feature Is On
-        }
-        else
-        {
-            // Feature Is Off
-        }
+        // Feature Is On
+    }
+    else
+    {
+        // Feature Is Off
     }
 }
 ```
