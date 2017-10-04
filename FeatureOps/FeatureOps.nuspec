@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>FeatureOps</id>
+    <version>0.1.0</version>
+    <title>Official C# Library for the Feature Ops Web API</title>
+    <authors>Jeremiah Billmann</authors>
+    <owners>jbillmann</owners>
+    <licenseUrl>https://github.com/featureops/featureops-csharp/blob/master/LICENSE</licenseUrl>
+    <projectUrl>https://github.com/featureops/featureops-csharp</projectUrl>
+    <iconUrl>https://avatars3.githubusercontent.com/u/32211284</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Official C# Library for the Feature Ops Web API</description>
+    <releaseNotes>Initial Feature Ops C# SDK Release</releaseNotes>
+    <copyright>Copyright © 2017 Feature Ops LLC</copyright>
+    <tags>Feature Ops Flags Toggles Service</tags>
+  </metadata>
+</package>
