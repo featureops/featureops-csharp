@@ -21,6 +21,6 @@ namespace FeatureOps
         public bool IsCanary { get; set; }
 
         [DataMember(Name = "targets")]
-        public IEnumerable<string> Targets { get; set; }
+        public List<string> Targets { get; set; }
     }
 }
