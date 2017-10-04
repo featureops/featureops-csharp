@@ -4,7 +4,7 @@ Official C# Library for the Feature Ops Web API
 ## Features
 - Provide (and evaluate) feature flags settings
 - Capture and store feature flag statistics within the Feature Ops application
-- Continue to serve feature flags if connectivty to Feature Ops goes down
+- Continue to serve feature flags if connectivity to Feature Ops goes down
 - Improve performance via feature flag caching
 
 ## Support
@@ -58,7 +58,7 @@ An instance of the Feature Ops client can be obtained by passing your `environme
 |Key|Type|Value|
 |---|---|---|
 |PollingInterval|int|The amount of time, in minutes, that the Feature Ops client should check for changes to its feature flags cache|
-|CancellationToken|CancellationToken|Sends notification that feature flags cache refresh polling should be canceled.|
+|CancellationToken|CancellationToken|Sends notification that feature flags cache refresh polling should be cancelled.|
 
 ### Client Objects & Methods
 
